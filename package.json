@@ -1,5 +1,5 @@
 {
-  "name": "factory_node",
+  "name": "@nfactorial/factory_node",
   "version": "0.0.1",
   "description": "Simple object factory for node.js",
   "main": "index.js",
