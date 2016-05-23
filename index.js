@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * This class provides a means of creating object based on an associated name.
  */
