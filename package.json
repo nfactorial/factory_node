@@ -1,0 +1,26 @@
+{
+  "name": "factory_node",
+  "version": "0.0.1",
+  "description": "Simple object factory for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfactorial/factory_node.git"
+  },
+  "author": "nfactorial",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nfactorial/factory_node/issues"
+  },
+  "homepage": "https://github.com/nfactorial/factory_node#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
