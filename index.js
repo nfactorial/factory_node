@@ -41,13 +41,14 @@ class Factory {
 
     /**
      * Creates an object of the specified type.
-     * @param name {String} Name of the object to be created.
+     * @param {String} name - Name of the object to be created.
+     * @param {...*} args - Arguments to be supplied to object constructor.
      * @returns {Object} The newly created object, if the object could not be found this method returns null.
      */
-    create(name) {
+    create(name, ...args) {
         if (this.map.has(name)) {
             const ctor = this.map.get(name);
-            return new ctor();
+            return new ctor(args);
         }
 
         return null;
