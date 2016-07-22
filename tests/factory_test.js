@@ -88,4 +88,36 @@ describe('factory_node', function() {
         // Verify our constructor was invoked the expected number of times
         expect(counter).to.equal(1);
     });
+
+    it('Should pass on arguments to the constructor', function() {
+        const TEST_STRING = 'testing';
+
+        let counter = 0;
+
+        const TestUnitCtor = function (a, b, c) {
+            if (0 !== a) {
+                throw new Error('TestUnitCtor - Expected a to equal 0 but it was ' + a);
+            }
+
+            if (1 !== b) {
+                throw new Error('TestUnitCtor - Expected a to equal 0 but it was ' + a);
+            }
+
+            if (TEST_STRING !== c) {
+                throw new Error('TestUnitCtor - Expected a to equal 0 but it was ' + a);
+            }
+            counter++;
+        };
+
+        const factory = new UnitFactory();
+
+        expect(factory.register(TEST_UNIT_NAME, TestUnitCtor)).to.be.true;
+
+        expect(factory.create(TEST_UNIT_NAME, 0, 1, TEST_STRING)).to.not.be.null;
+
+        expect(factory.unregister(TEST_UNIT_NAME)).to.be.true;
+
+        // Verify our constructor was invoked the expected number of times
+        expect(counter).to.equal(1);
+    });
 });

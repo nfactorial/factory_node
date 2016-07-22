@@ -48,7 +48,7 @@ class Factory {
     create(name, ...args) {
         if (this.map.has(name)) {
             const ctor = this.map.get(name);
-            return new ctor(args);
+            return new ctor(...args);
         }
 
         return null;
